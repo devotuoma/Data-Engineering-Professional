@@ -58,5 +58,6 @@ Here is where Kappa architecture comes into play. It is a simplified version of 
 Let's summarize the key differences between both architectures. Lambda uses two layers: batch and stream. On the other hand, Kappa eliminates the need for a separate layer by treating all data as a single data stream. Lambda is still useful as we will have more flexibility at the time of ingesting the data and also may produce more complex outputs via the batch layer. However, the overall complexity of maintaining the system is greater than what with Kappa.
 
 
+<img width="867" height="338" alt="Screenshot 2026-02-19 at 11 59 46" src="https://github.com/user-attachments/assets/4d24f9e4-e26a-41c6-ab4f-636a2d0c972a" />
 
 
