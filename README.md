@@ -61,3 +61,38 @@ Let's summarize the key differences between both architectures. Lambda uses two 
 <img width="867" height="338" alt="Screenshot 2026-02-19 at 11 59 46" src="https://github.com/user-attachments/assets/4d24f9e4-e26a-41c6-ab4f-636a2d0c972a" />
 
 
+
+1. Data Mesh and Data Fabric
+00:00 - 00:06
+Now, we'll explore two innovative approaches to managing data: Data Mesh and Data Fabric.
+
+2. Data Mesh
+00:06 - 00:39
+Let's start with Data Mesh. It is an architectural approach that aims to decentralize data ownership and management within an organization. Let's review this definition. So, when we talk about ownership and management, we refer to taking full responsibility for the data. We will have the authority to determine who can access or use our data, as we're the ones with control over all decisions for such data assets. However, at the same time, it is our duty to keep data quality standards and ensure its security and privacy.
+
+3. Data Mesh architecture
+00:39 - 01:11
+Thus, a Data Mesh looks for the proper owners for each data asset and exposes those assets as products while still sharing a common self-served infrastructure. It is similar to the Microservices concept as each team will have full responsibility for their service, data in our case, and have to expose a clear interface for others to consume it. This is a huge mindset shift, as in traditional architectures, data is often treated as a centralized asset owned by a dedicated team, for example, the IT department.
+
+1 https://martinfowler.com/articles/data-monolith-to-mesh.html
+4. How to process data then?
+01:11 - 01:45
+So far, Data Mesh is not describing how to process data as Lambda or Kappa does. That is because Data Mesh is more concerned with the organizational and cultural aspects of data management. It provides guidelines and principles for organizing teams, defining data domains, and promoting data autonomy within an organization but not tools directly. Thus, they address different aspects of a data platform and could be combined to produce a more robust solution. Something similar happens with Data Fabric that we'll review soon.
+
+5. Data Mesh benefits and challenges
+01:45 - 02:15
+Finally, let's review some benefits and challenges of using Data Mesh. We're aiming to democratize our data through decentralization of data ownership, which provides us with a whole set of benefits like scalability, agility, and flexibility as each domain is independent. However, it also requires a huge cultural shift, really clear governance policies, efforts in coordination, and extra technical complexity for the same reasons.
+
+6. Data Fabric
+02:15 - 03:20
+Moving on to Data Fabric. It is an architectural framework that aims to create an unified and integrated view of an organization's data assets. At first, it may sound different from Data Mesh, however, they both share a final goal which is data democratization. Nonetheless, in this scenario, we'll heavily rely on the metadata to be able to manage our data. A Data Fabric should be able to collect and analyze all types of metadata. The idea here is to be able to take this analysis to the point in which the Data Fabric itself could help us with the overall management and integration of our data. We'll leverage concepts like knowledge graphs, which is a representation of real word entities and their relationships in a graph structure, and machine learning algorithms to "activate" our metadata by making it available for end users, and enabling intelligent data management and integration; with the Data Fabric providing insights on how to cluster and manage assets, how to add them to the overall ecosystem.
+
+1 https://www.gartner.com/smarterwithgartner/data-fabric-architecture-is-key-to-modernizing-data-management-and-integration
+2 https://www.ibm.com/topics/data-fabric
+7. A Data Fabric should support...
+03:20 - 03:44
+Finally, something that is commonly heard about Data Fabric is the usage of virtualization. Even though it is useful, we aim to be able to consume all sorts of data in all sorts of ways - from traditional ETLs to virtualization, without a particular focus. The idea is to be able to integrate sources of all shapes and support the delivery styles required by the business.
+
+
+
+
