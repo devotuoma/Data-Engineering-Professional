@@ -111,14 +111,19 @@ Let's start with blob storage. This is probably the most general type of storage
 About use cases, blob storages are a really good choice for unstructured data, and also for backing up or archiving any type of data. Additionally, it is a good choice to be the first place you store your data when it arrives on your data platform. At the same time, you could use them to deliver content to end-users, like static website content or files.
 
 4. SQL
-01:34 - 02:25
+<img width="847" height="306" alt="Screenshot 2026-02-24 at 11 23 55" src="https://github.com/user-attachments/assets/9125624d-660f-490d-a6a4-3a80dc0f7c03" />
+
 Now we'll review storage solutions that actually require some sort of structure around the data, and in exchange it provides query capabilities to us. First, we have SQL-based storage. Here, we'll find relational database management systems or RDBMS like MySQL or PostgreSQL, which will be better suited for transactional applications with strong consistency and integrity. However, data warehouses may also fall into this category, obviously relaxing some conditions but still providing a SQL-based query engine. Thus, if we're looking to store structured data and query it in complex manners, we could consider using SQL-based storage. Some common offerings out there are the fully managed options by the top three cloud providers.
 
 5. NoSQL
-02:25 - 03:23
+
+<img width="859" height="285" alt="Screenshot 2026-02-24 at 11 24 38" src="https://github.com/user-attachments/assets/b50f572a-0a6f-4489-b9cd-15cea272a785" />
+
 On the NoSQL, or "not only SQL", side, we'll find solutions that are planned to support huge traffic loads and have really good response times. However, it's important to know that we'll pay for that by not being strongly but eventually consistent. NoSQL stores are non-tabular databases, providing flexibility in data types and structure, meaning we could store semi-structured data with really diverse formats like documents, key-value pairs, and graphs, among others. Another interesting thing about SQL and NoSQL-based storage is the query capability. For blob storage, we could only get a file by its identifier, not much about its actual content. That's not the case for these storages, we could actually get insights from the data due to its structured nature. So, they're pretty common as well in later layers within a data architecture that has end-users consumption.
 
 6. Data warehouses and data lakes
-03:23 - 03:55
+
+<img width="541" height="179" alt="Screenshot 2026-02-24 at 11 25 28" src="https://github.com/user-attachments/assets/eaff97c7-69e1-46d8-b4d7-e8492dcba388" />
+
 Even though data warehouses and data lakes are more complex systems, with current offerings like BigQuery, Redshift, or blob storages it is really common to consider them when deciding where and how to store our data. Most companies decide to get data directly from their operational databases into the data warehouse and have logical separation within it to be able to process the data to be better suited for analytical purposes. Actually, this is also known as ELT, which is a really common practice nowadays.
 
