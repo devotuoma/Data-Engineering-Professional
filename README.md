@@ -234,8 +234,13 @@ Data governance is present across our whole architecture. Let's dive into it!
 Data governance is a complex concept combining people, processes, and tools to appropriately control our data assets. Data governance helps companies understand what data they possess, where it originated, and its quality. At the same time, a well-defined data governance strategy allows them to secure their data, prevent unauthorized access, and meet industry regulations.
 
 1 https://www.oreilly.com/library/view/data-governance-the/9781492063483/
+
+
 3. The people
-00:31 - 01:16
+
+<img width="858" height="289" alt="Screenshot 2026-02-25 at 10 20 05" src="https://github.com/user-attachments/assets/eef220e3-ff47-465e-a82d-a45190e20d55" />
+
+
 Let's start with the people and the different roles that exist here in data governance. We have three main categories, the first being governors or approvers. They are accountable for the data. Here we find roles like owner or steward that are the actual implementers of the data governance strategy. These roles have first-hand knowledge of the data assets, and they are also responsible for processes like classification and access control. Next, the users are the ones who consume the data. For instance, data analysts or data scientists. Finally, there are other actors like the legal team that helps to understand and adhere to industry regulations or C-executives that fund and lead the overall strategy.
 
 4. The processes
