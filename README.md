@@ -603,3 +603,37 @@ When data is ready, we'd like to perform analytics. However, if we only serve ou
 
 
 We didn't mention much about governance or orchestration. Nonetheless, keep in mind that we decided to quarantine poor-quality records. This is actually a data governance policy we are defining, and this will require us to think about how to treat such records. For instance, we'll need to have a set of jobs to review them and involve people in it, requiring us to send emails and orchestrate this validation. Even if we focused on a really specific flow, we still needed to consider several aspects. Thus, as requirements get more complex, we would like to refine these concepts and leverage them to properly manage our platform. Finally, keep in mind that this is one of the multiple approaches to solving the same problem. In the end, everything is a trade-off, and we should be able to understand them and decide which part of the trade-off is more important to us at the time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Wrap-up
+00:00 - 00:08
+Hey! You did it! You finished the modern data architecture course. Well done! Let's briefly review what you have learned.
+
+2. Chapter 1 - Introduction to Modern Data Architecture
+00:08 - 00:22
+In chapter one, you learned what modern data architectures are, their requirements, and some well-known data architectures. This provided the foundations for you to be able to design your own architectures that meet your needs.
+
+1 https://martinfowler.com/articles/data-monolith-to-mesh.html
+3. Chapter 2 - Modern Data Architecture Components
+00:22 - 00:42
+In chapter two, you reviewed some of the fundamental components of every data architecture, like ingestion, storage, batch and streaming processing, and, obviously, serving your data. Every data platform needs to consider these components, and in this chapter, you understood how to choose the right solution for your needs.
+
+4. Chapter 3 - Transversal Components of Data Architectures
+00:42 - 00:56
+In Chapter 3, you learned of the components that allow a data architecture to be as big as it needs to be. More specifically, how to manage the platform through data governance, metadata, observability, and security.
+
+5. Chapter 4 - Putting it All Together
+00:56 - 01:07
+Finally, in Chapter 4, you learned about cost optimization and orchestration, and most importantly you applied all your new knowledge to solve a business case!
