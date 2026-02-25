@@ -317,6 +317,7 @@ Finally, where do we keep all this metadata? Well, we've got some really good he
 
 1. Data Security
 
+<img width="769" height="407" alt="Screenshot 2026-02-25 at 11 13 47" src="https://github.com/user-attachments/assets/69fc8e35-2f55-4816-b1db-d526403768cf" />
 
 
 Data security is a vital aspect of protecting sensitive information, ensuring compliance, and building trust. Thus, it is key for every data platform!
@@ -337,9 +338,16 @@ Understanding data security starts with understanding the consequences of its fa
 Fortunately, we have various tools to protect us from such risks. For instance, Access Control. Think of it as the door to your house, where you decide who can enter. This practice defines who can access what data, adding a layer of security that's critical in a data platform. Then, we have encryption. This process converts our data into complex meaningless text, only readable with a specific cryptographic key. Encryption is like sending a secret letter only the recipient can read. We need to consider encrypting our data at rest, that is, when the data is living in any storage medium, and in transit, when it's being transferred from one location to another, such as over the Internet. Although, encrypting data in both states is a great security measure, we need to be mindful that it can be costly, impacting performance and billing. Finally, we have data masking. With it, we can use the data without revealing the sensitive parts. The actual data is there, but it's obscured, ensuring it can't be exploited if it falls into the wrong hands. Actually, encrypting some columns of a table could be considered masking as well.
 
 
+<img width="800" height="377" alt="Screenshot 2026-02-25 at 11 16 38" src="https://github.com/user-attachments/assets/c25fb1d8-4595-4855-9d54-afcda38ca066" />
+
+
+
 
 
 4. Strengthening security in the cloud
+
+<img width="804" height="417" alt="Screenshot 2026-02-25 at 11 17 40" src="https://github.com/user-attachments/assets/9a5f61b5-f370-41a3-af5f-2a36c3115d11" />
+
 
 
 Additionally, in the cloud, there are a lot of specialized tools that make data security even stronger. IAM, or Identity and Access Management, is probably the main one. This type of service allows us to define permissions at a granular level or even use roles to group a set of related permissions. Normally, IAM is offered by cloud providers as a free service, thus being a really good idea for initial steps into data security. Then, we have Key Management Systems or KMS. These systems are a safe place to keep our cryptographic keys used for encryption. They handle tasks like key creation, rotation, and deletion, providing a secure way to encrypt and decrypt data without the burden of managing our keys. Nonetheless, cloud providers also allow us to provide our keys in case we need them. This is known as CMK, which is the "customer-managed key".
@@ -348,6 +356,7 @@ Additionally, in the cloud, there are a lot of specialized tools that make data 
 
 5. Strengthening security in the cloud: The network
 
+<img width="849" height="380" alt="Screenshot 2026-02-25 at 11 19 05" src="https://github.com/user-attachments/assets/6c19efb1-b14f-41b4-ab4b-0d4104c81e4a" />
 
 Another way to protect our data is by preventing users from being able to connect to it, for example, via networking. Tools like firewalls or private networks may be used here. In the cloud, we have VPCs, or virtual private clouds, that allow us to create a virtual network and configure it with the appropriate isolation we may require to protect our data. Lastly, there are even more controls that we could apply at the border of our network. For instance, limit access to specific managed devices, or IPs, or even control via the network perimeter serverless services. Google offers such service via VPC service controls, and it's especially useful for services like BigQuery, which is accessible from a public endpoint. Even though a network is a great approach to control access, it will normally be easier and cheaper to leverage tools like IAM as a first step to protect us.
 
