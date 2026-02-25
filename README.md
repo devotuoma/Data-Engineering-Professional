@@ -403,3 +403,61 @@ Next, we have logging. Logging involves creating a record of events that happen 
 
 But how can we keep our logs, metrics, or traces? Don't worry, providers like Amazon and Google offer tools like AWS CloudWatch, or Google's operations suite. These tools simplify these aspects and allow us to easily create dashboards or query such information to be able to troubleshoot and better understand our systems. These solutions integrate seamlessly with other systems, services, and platforms, enhancing observability across various applications and services. This means you can centralize your observability tasks within a single platform. However, remember, they always come at a price. Costs can add up based on the amount of data stored, processed, the number of traces, or log events. It's crucial to understand the pricing model before committing fully. Nonetheless, be sure that observability is more valuable than the price those platforms normally charge us. Finally, remember that not only those cloud providers offer such solutions. Out in the market, you can find plenty of them, like Grafana, Datadog, New Relic, and Azure Monitoring, among many others.
 
+
+
+
+
+
+
+
+
+
+
+1. Orchestration
+
+As we get more data, we'll need to properly coordinate the different jobs to operate our platform. Let's review how orchestration solves this.
+
+
+2. What is orchestration?
+
+<img width="866" height="454" alt="Screenshot 2026-02-25 at 11 48 48" src="https://github.com/user-attachments/assets/148fe05b-a20e-4e8e-b34c-b718f5f2827a" />
+
+Let's imagine we have five tables to ingest in a delta approach. After we ingest that data, we want to perform some data quality validations and transformations and finally create a datamart with that data to feed a dashboard. This process needs to happen every day. So, how would we do it? Well, there are a couple of approaches: First, we could try to create multiple schedulers to run every job independently and estimate the time each job takes to schedule the next one. Another possibility will be to schedule the ingestion jobs and send some sort of notification after it ends so someone on the team can start the next job or have a service that listens to it to start the next job. This last approach is a form of orchestration. Orchestration is the automated configuration and coordination of complex workflows. And as we can imagine, there are a lot of benefits around it, but the most important one is freeing up human resources.
+
+
+
+
+1 https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html
+3. Orchestration vs scheduling
+
+
+<img width="859" height="411" alt="Screenshot 2026-02-25 at 11 50 28" src="https://github.com/user-attachments/assets/3c75badc-b749-4841-8a3b-dbfcc6bca984" />
+
+So, in our previous example, we also mentioned scheduling. That's a valid option, but, as we may imagine it's extremely sensitive to many factors that we may not necessarily control. So, that's why orchestration comes into play. Nonetheless, scheduling is not discarded due to orchestration. Actually, scheduling most of the time is the starter of our orchestration workflows.
+
+
+
+4. Apache Airflow
+
+<img width="754" height="387" alt="Screenshot 2026-02-25 at 11 51 32" src="https://github.com/user-attachments/assets/e8b8f405-e717-44b3-9291-12c0caa047e8" />
+
+
+One popular tool for orchestration is Apache Airflow. It is a platform to programmatically author, schedule, and monitor workflows using Python code. We will use it to explain some of the main concepts around orchestration.
+
+
+
+5. Core concepts of orchestration
+
+<img width="736" height="426" alt="Screenshot 2026-02-25 at 11 54 33" src="https://github.com/user-attachments/assets/1f2ca5bb-da96-4dbc-8111-ecb403865248" />
+
+
+Let's start from the ground up. Tasks refer to the basic unit of execution in Airflow. It may be as simple as running a SQL query or a Python script and as complex as starting a whole ETL job. However, complex workflows require many tasks. Some can be done independently, but others may depend on the results of previous tasks. This is where dependencies come in. For example, task B, which may involve data analysis, can only be completed after task A, the data extraction. These tasks and dependencies form what we call a Directed Acyclic Graph, or DAG. In Airflow, a DAG is essentially a workflow. It's "directed" because tasks follow specific paths and "acyclic" because tasks don't loop back on themselves, ensuring workflows always move forward. For instance, in this DAG, we have task "A" that starts the DAG, then we have tasks "B" and "C" that depend on "A", and finally, task "D" depends on the previous ones without any cycles.
+
+6. Core concepts of orchestration
+
+
+<img width="674" height="396" alt="Screenshot 2026-02-25 at 11 55 39" src="https://github.com/user-attachments/assets/fcfdc13f-8682-47fc-a988-fa6f62090a12" />
+
+
+Now, how are these tasks carried out? Here's where operators come into play. Each task is an instance of an operator class. The operator determines the nature of the task, whether it's running a Bash command, executing a Python function, or even waiting for a certain condition to be met, which leads us to sensors. Sensors are a special kind of operator. They wait for a specific condition to be met. For instance, a sensor could pause the workflow until a particular file lands in a specific location. Finally, we have the scheduler. The scheduler automates the triggering of our tasks based on a given interval. It checks the DAGs to see if they have any tasks to run and triggers them accordingly.
+
