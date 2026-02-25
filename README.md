@@ -127,3 +127,25 @@ On the NoSQL, or "not only SQL", side, we'll find solutions that are planned to 
 
 Even though data warehouses and data lakes are more complex systems, with current offerings like BigQuery, Redshift, or blob storages it is really common to consider them when deciding where and how to store our data. Most companies decide to get data directly from their operational databases into the data warehouse and have logical separation within it to be able to process the data to be better suited for analytical purposes. Actually, this is also known as ELT, which is a really common practice nowadays.
 
+
+
+
+1. Data Ingestion
+00:00 - 00:06
+Data architecture is about data, and we normally need to be able to ingest it to work with it.
+
+2. What is data ingestion?
+00:06 - 00:48
+So, what is data ingestion? Software systems are designed to meet specific functional requirements. Thus, they normally use storage solutions that help them to be functional, and that doesn't necessarily mean good for analytics. In modern data architectures, we'll generally need to replicate data coming from multiple sources, especially transactional systems, so we'll be able to perform analytics over our data without affecting the overall performance and functionality of our applications. In brief, ingestion is about getting our data from different sources into our data platform, so we can play with it and evolve it into a useful asset for the business.
+
+3. Batch ingestion
+00:48 - 01:39
+Now, we need to consider how to ingest our data. This will happen through jobs that are simply scripts that define a set of tasks to be performed. Probably the most common approach is by using a batch job that will be triggered with some schedule and will gather the data from where it originally resides. Batch ingestion, however, has to deal with a huge decision: will we read all existing data every time we run the job, or will we read only data that has changed since the last time we ingest it? This depends on the size of our data, computing, network, and storage capacity. If we have infinite resources, bringing all data will be easier, then we could do analytics over the current state of the data or examine how the data changes over time as we also have such information.
+
+4. Batch ingestion: Bring only what changed
+01:39 - 02:20
+Having infinite resources is impossible, so we'll depend on bringing what has changed most of the time. This is not an easy approach. We need to consider how we are going to determine whether something has changed from the previous time. We'll need a timestamp or a "was updated" flag. Then, the source system has to provide such capability for us. Additionally, after bringing the delta of data, we need to consolidate it with the previous data to get the latest state. So, we'll need more jobs. Finally, let's think about deletions: if a record was deleted, how would we know that? We'll probably need to read the whole data once every month or so.
+
+5. Streaming ingestion
+02:20 - 03:24
+On the other hand, we can ingest our data in real-time! Nonetheless, this requires a mindset shift. For ingesting data here, also known as the push model, we'll depend on events. For instance, a change data capture will tell us whenever something happens to an entity in a database and what exactly happened. So, we'll get those events into a queue like Kafka or Pub/Sub and listen to the queue all the time. Finally, we need to store the events. It could be, for instance, by keeping the whole history plus a view or copy with the latest status of our data. Streaming is also really good for when you don't know when the events will happen or when external entities will send the data to you. The drawback is you need to listen 24/7. Finally, remember that no matter how we get our data, it's always a good idea to first store it in a dedicated zone for new data, also known as a landing zone, so we can explore and process it before our end-users get to know it.
