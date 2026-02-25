@@ -226,6 +226,8 @@ Finally, it's important to differentiate between serving and consuming. Even tho
 1. Data governance
 00:00 - 00:06
 Data governance is present across our whole architecture. Let's dive into it!
+<img width="766" height="451" alt="Screenshot 2026-02-25 at 10 16 37" src="https://github.com/user-attachments/assets/1e52be33-63d2-4ce8-8f15-2a273bf95fd7" />
+
 
 2. What is data governance?
 00:06 - 00:31
