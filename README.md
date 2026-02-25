@@ -461,3 +461,48 @@ Let's start from the ground up. Tasks refer to the basic unit of execution in Ai
 
 Now, how are these tasks carried out? Here's where operators come into play. Each task is an instance of an operator class. The operator determines the nature of the task, whether it's running a Bash command, executing a Python function, or even waiting for a certain condition to be met, which leads us to sensors. Sensors are a special kind of operator. They wait for a specific condition to be met. For instance, a sensor could pause the workflow until a particular file lands in a specific location. Finally, we have the scheduler. The scheduler automates the triggering of our tasks based on a given interval. It checks the DAGs to see if they have any tasks to run and triggers them accordingly.
 
+
+
+
+
+
+
+
+
+1. Storage & processing costs best practices
+
+
+Now, we'll explore how to optimize cloud service costs in data architectures.
+
+2. Cost models
+<img width="780" height="442" alt="Screenshot 2026-02-25 at 12 05 34" src="https://github.com/user-attachments/assets/86f56b29-bdd3-4ce9-b4fb-0e5c73a70b9e" />
+
+
+Let's start with cost models. Cost models are methodologies used to calculate expenses associated with cloud services. They vary depending on the provider and the services used, but there are two common models: Pay-as-you-go and reserved capacity. In a pay-as-you-go model, you pay for the resources you use, like paying for electricity based on how much you consume. On the other hand, reserved capacity offers discounts for committing to a certain usage level over an extended period, like signing a contract for a year with a specific company to get a lower rate.
+
+3. Costs to keep in mind
+<img width="578" height="296" alt="Screenshot 2026-02-25 at 12 06 39" src="https://github.com/user-attachments/assets/ff92502f-0e76-4d88-a466-35c1a537adb1" />
+
+
+Although each service has its own pricing method, they share some important points. For instance, pay-as-you-go services will charge you for network traffic, storage, compute capacity, and the amount of time you use the services.
+
+4. Blob storage cost example
+
+<img width="867" height="343" alt="Screenshot 2026-02-25 at 12 07 48" src="https://github.com/user-attachments/assets/ed397674-77a4-488b-a855-49debf0c0fdd" />
+
+Let's review the case of Cloud Storage. It will charge us for the bytes we store during the time we store them. Additionally, we'll be charged for the operations we perform with our data. It could be moving our data or simply reading it. The exact charges will vary depending on the provider, but we must be aware of these possibilities. Actually, a really common charge is network traffic. Every time that there's data flowing through the network, there may be a charge associated. This, however, tends to be the case only if we're moving our data from one cloud region to another or moving it out of the provider's network. In the case of data platforms, the networking charges could be huge, so it is vital to store our data in regions close to our users!
+
+5. Cost optimization
+<img width="754" height="390" alt="Screenshot 2026-02-25 at 12 10 17" src="https://github.com/user-attachments/assets/76b1225f-22d4-4455-8c05-fed03f666509" />
+
+
+
+So, we aim to reduce our costs while keeping the quality of our service. That's what cost optimization is about. For instance, in Cloud Storage, there are multiple storage classes, and each class may sacrifice how easy it is to access the data to reduce the cost of storing it. This is an extremely useful tool as not all data needs to be accessed all the time. That's why blob storages are good for archiving. Nonetheless, keep in mind that if you push your data to Cloud Storage Nearline or Coldline, which are storage classes that benefit from long-term storage, retrieving it will require some hours, and if you retrieve it multiple times in short periods of time, it may become more expensive than using standard class. So, think twice about which data to move there. Lastly, for this example, these services offer a life-cycle management tool, meaning that you can automate moving your data between classes after some time, so you reduce costs seamlessly.
+
+1 https://cloud.google.com/blog/products/storage-data-transfer/archive-storage-class-for-coldest-data-now-available
+6. Importance of cost monitoring and alerting
+
+<img width="884" height="464" alt="Screenshot 2026-02-25 at 12 12 34" src="https://github.com/user-attachments/assets/d6d7b960-1cd6-44b3-be2f-438f87b2e7de" />
+
+
+Finally, the most effective optimization technique is cost monitoring and alerting. We need to continuously track our cloud usage and set up alerts for unusual spikes, so we can react appropriately. If we're able to detect an increased consumption of our resources, we can verify if that's coming from an undesired bug or if maybe our business is doing just great! It's important to be able to know when something abnormal is happening and if we're okay with such behavior. Additionally, monitoring allows us to understand precisely where our money is going, so we can dedicate more time to optimize specific use cases. Remember - regularly reviewing usage, adapting to changing demands, and making informed decisions are critical to maintaining our platforms.
