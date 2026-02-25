@@ -362,3 +362,44 @@ Another way to protect our data is by preventing users from being able to connec
 
 
 
+
+
+
+
+
+
+
+
+
+1. Observability
+
+Let's meet our best friend for when problems arise: Observability.
+
+
+2. What is observability?
+
+Observability is understanding the inside of a system from the outside. Now, when we talk about data observability, we are talking about the ability to observe the status and behavior of data as it moves through different stages. But why is observability important? In modern data architectures, systems can be complex, especially as they're distributed, making it hard to know what's going wrong when problems arise. Observability lets us identify issues, figure out their cause, and fix them fast, ensuring our data platform works well and stays reliable.
+
+3. Key aspects of observability: Monitoring & metrics
+
+<img width="870" height="409" alt="Screenshot 2026-02-25 at 11 30 07" src="https://github.com/user-attachments/assets/17ec63d1-e104-48d7-a2e6-576da00da4ef" />
+
+Now, let's dive into its key aspects. There are three of them that we should know: Monitoring, logging, and tracing. Monitoring is a process where we continuously check the system's status and performance. For example, are our data pipelines running quickly and smoothly, or are they slow and with errors? To be able to monitor, we need to understand what we are looking at, and that's where metrics come in. Metrics are numerical values emitted by our systems that allow us to understand what's going on. For instance, our system may emit a metric for memory and CPU, so we can know if it is overloaded.
+
+
+
+
+4. Key aspects of observability: Logging & tracing
+<img width="779" height="425" alt="Screenshot 2026-02-25 at 11 31 35" src="https://github.com/user-attachments/assets/9f331ade-57ea-43ec-8ae9-077f5dbaf3ec" />
+
+
+Next, we have logging. Logging involves creating a record of events that happen in a system. Think of it as a diary of a system. It helps us see what happened in the past. For example, if a specific record in our data did not match the expected format and we can't process it. Our system may write an informational or debug log message, or even throw an exception. Logs would tell us that types of details if we would like to do so. A special type of log is 'audit log'. These are records that provide documentation of the sequence of events that have affected our systems. For instance, if we change a configuration. This is particularly important in industries that have strict regulations, but overall, audit logs are extremely useful as they allow us to know who did what and when. Additionally, they're easily set up in cloud providers, but you will be charged for their storage. Finally, we have tracing. Tracing is like following the hints that the data leaves in every place it visited, so we can reconstruct where exactly it was, and analyze its whole route. Differing from logs and metrics that provide information about specific systems, tracing helps us to understand what happens through the whole flow.
+
+
+
+5. Observability platforms
+<img width="863" height="442" alt="Screenshot 2026-02-25 at 11 34 44" src="https://github.com/user-attachments/assets/d3bf1bb3-5c2d-404d-a98c-88e62161f9fc" />
+
+
+But how can we keep our logs, metrics, or traces? Don't worry, providers like Amazon and Google offer tools like AWS CloudWatch, or Google's operations suite. These tools simplify these aspects and allow us to easily create dashboards or query such information to be able to troubleshoot and better understand our systems. These solutions integrate seamlessly with other systems, services, and platforms, enhancing observability across various applications and services. This means you can centralize your observability tasks within a single platform. However, remember, they always come at a price. Costs can add up based on the amount of data stored, processed, the number of traces, or log events. It's crucial to understand the pricing model before committing fully. Nonetheless, be sure that observability is more valuable than the price those platforms normally charge us. Finally, remember that not only those cloud providers offer such solutions. Out in the market, you can find plenty of them, like Grafana, Datadog, New Relic, and Azure Monitoring, among many others.
+
