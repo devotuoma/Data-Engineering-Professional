@@ -244,14 +244,56 @@ Data governance is a complex concept combining people, processes, and tools to a
 Let's start with the people and the different roles that exist here in data governance. We have three main categories, the first being governors or approvers. They are accountable for the data. Here we find roles like owner or steward that are the actual implementers of the data governance strategy. These roles have first-hand knowledge of the data assets, and they are also responsible for processes like classification and access control. Next, the users are the ones who consume the data. For instance, data analysts or data scientists. Finally, there are other actors like the legal team that helps to understand and adhere to industry regulations or C-executives that fund and lead the overall strategy.
 
 4. The processes
-01:16 - 02:16
+
+
+<img width="528" height="348" alt="Screenshot 2026-02-25 at 10 22 15" src="https://github.com/user-attachments/assets/a8952c21-f5d1-43a2-8ccc-62793b6c6f2b" />
+
 There's a wide variety of processes that companies need to implement to be able to properly govern their data. Our aim is to know our data, its quality, and when and where it originated, along with limiting access. One step is to classify our data, which allows us to understand what type of data we have. Is it sensitive? What exactly does that data represent? Additionally, processes like data lineage that aim to understand the origin of our data need to be implemented. And data quality as well. We need to define what we consider good data, how often we are going to validate that our data is good, or what we are going to do with bad data. Those are the kind of things that encompass the processes in a data governance strategy. And actually, these are the processes that governors normally are responsible for. That's why data governance needs the processes plus the people responsible for them and the data.
 
+
+
 5. The tools
-02:16 - 03:49
+
+<img width="528" height="348" alt="Screenshot 2026-02-25 at 10 22 15" src="https://github.com/user-attachments/assets/e8975580-e5a3-4f2b-a3fe-1dcf4e8a5fb8" />
+
 Now, we have the tools or technology that will facilitate the implementation of the processes described before. Probably the main tool around data governance is the enterprise dictionary. This dictionary will allow us to categorize our data into different information types. For instance, if a certain field is a phone number, or maybe a name or a salary. With such valuable information, we could start relying on data classes as well. For example, a class called PII or personally identifiable information will allow us to enforce policies on all fields marked as PII. Note that fields may be considered PII or not depending on regulations and company policies, but there are pretty common ones like names, passport numbers, or phones that are considered PII in most popular regulations. We could, for example, restrict access to PII data or only allow it under specific conditions. However, overall, this sounds like more processes. We need to consider how to automate these processes of classification and access management, and current cloud providers offer really good solutions like Data catalog from GCP or Glue data catalog from AWS. At the same time, we have IAM offerings to restrict and manage access to our data, and it normally integrates deeply with catalogs allowing us to ensure access in a granular manner. Finally, it's important to note that processes like data quality, lineage, or encryption are also candidates for automation, and we should pursue this.
 
-6. Let's practice!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Metadata Management
+
+The main enabler of any data governance strategy is the metadata. Let's check it out!
+
+2. What is metadata?
+
+<img width="858" height="289" alt="Screenshot 2026-02-25 at 10 20 05" src="https://github.com/user-attachments/assets/ce2d49f8-7a42-4fce-80c2-b149af097d5c" />
+
+
+So, let's start with the basics - What is metadata? In its simplest form, metadata is 'data about data'. It provides information about our data, which can be used to organize, locate, and understand it more effectively. Imagine walking into a library and picking up a book. How do you know what it's about? You'd look at the title, maybe the author, and then take a look at the blurb on the back. All of this is metadata. It gives us context and helps us to understand what the book, or in our case, the data, is all about. Metadata is an essential part of data architecture because it allows for efficient data management and usage. It makes data discoverable and accessible, enhances its usability, and aids in maintaining data quality.
+
+3. Metadata types
+
+<img width="528" height="348" alt="Screenshot 2026-02-25 at 10 22 15" src="https://github.com/user-attachments/assets/a54949c5-3063-457e-904a-5b5e77c672a5" />
+
+
+Now, let's get to know the different 'species' of metadata. First up, we've got technical metadata. This type of metadata relates to the data structure, including database schema, column names, data types, or relationships. Think of it as the blueprint of your data environment. In our book example, it could be, for instance, the number of pages or the ISBN. Next, business metadata provides context about the data, like business definitions and rules, or the owner of the data. An example would be a business glossary that defines the terms used in an organization. Back to our book example, business metadata there could be a summary or the genre, that provides us with context on what the book is about. Then we have operational metadata, which is like a diary of our data processing. It keeps a record of things like timestamps, ETL job status, and data quality metrics. It's like the daily health check-up for our data. Lastly, we have usage metadata. This type keeps track of data usage - who accessed it, when, and how it was used. It's like the security footage for your data, crucial for auditing and data security.
+
+4. Where to store your metadata?
+02:17 - 03:46
+Finally, where do we keep all this metadata? Well, we've got some really good helpers for that - metadata management systems, like GCP's Data Catalog, AWS's Glue Catalog, or even Apache Atlas. GCP's Data Catalog is like a well-organized librarian, always ready to help you find your data. It integrates with services like BigQuery, Spanner, Cloud Storage, or Pub/Sub, automatically ingesting and storing metadata from these Google Cloud services. But what if your data is outside Google Cloud or simply not directly integrated, like in a local server or another cloud? You can use their API to register and index that external metadata, making it searchable within Data Catalog. Similarly, AWS Glue Catalog acts as a one-stop shop for your metadata. It integrates with services like S3, Redshift, and RDS, collecting, cataloging, and enriching your metadata. And for data outside AWS, Glue catalog offers crawlers that can connect to external data sources, such as databases hosted on-premises or in other clouds, and catalog that data. There are plenty of other solutions out there. The important thing here is that they allow us to easily integrate with the services and solutions we use to store our data, and also allow us to properly discover and understand it!
 
 
 
