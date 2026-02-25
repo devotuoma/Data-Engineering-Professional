@@ -293,8 +293,13 @@ So, let's start with the basics - What is metadata? In its simplest form, metada
 
 Now, let's get to know the different 'species' of metadata. First up, we've got technical metadata. This type of metadata relates to the data structure, including database schema, column names, data types, or relationships. Think of it as the blueprint of your data environment. In our book example, it could be, for instance, the number of pages or the ISBN. Next, business metadata provides context about the data, like business definitions and rules, or the owner of the data. An example would be a business glossary that defines the terms used in an organization. Back to our book example, business metadata there could be a summary or the genre, that provides us with context on what the book is about. Then we have operational metadata, which is like a diary of our data processing. It keeps a record of things like timestamps, ETL job status, and data quality metrics. It's like the daily health check-up for our data. Lastly, we have usage metadata. This type keeps track of data usage - who accessed it, when, and how it was used. It's like the security footage for your data, crucial for auditing and data security.
 
+
+
 4. Where to store your metadata?
-02:17 - 03:46
+
+
+<img width="798" height="444" alt="Screenshot 2026-02-25 at 11 03 06" src="https://github.com/user-attachments/assets/c0abd382-a725-424f-b68c-ac1ac7218e6b" />
+
 Finally, where do we keep all this metadata? Well, we've got some really good helpers for that - metadata management systems, like GCP's Data Catalog, AWS's Glue Catalog, or even Apache Atlas. GCP's Data Catalog is like a well-organized librarian, always ready to help you find your data. It integrates with services like BigQuery, Spanner, Cloud Storage, or Pub/Sub, automatically ingesting and storing metadata from these Google Cloud services. But what if your data is outside Google Cloud or simply not directly integrated, like in a local server or another cloud? You can use their API to register and index that external metadata, making it searchable within Data Catalog. Similarly, AWS Glue Catalog acts as a one-stop shop for your metadata. It integrates with services like S3, Redshift, and RDS, collecting, cataloging, and enriching your metadata. And for data outside AWS, Glue catalog offers crawlers that can connect to external data sources, such as databases hosted on-premises or in other clouds, and catalog that data. There are plenty of other solutions out there. The important thing here is that they allow us to easily integrate with the services and solutions we use to store our data, and also allow us to properly discover and understand it!
 
 
