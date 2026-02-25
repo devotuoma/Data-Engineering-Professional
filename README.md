@@ -149,3 +149,31 @@ Having infinite resources is impossible, so we'll depend on bringing what has ch
 5. Streaming ingestion
 02:20 - 03:24
 On the other hand, we can ingest our data in real-time! Nonetheless, this requires a mindset shift. For ingesting data here, also known as the push model, we'll depend on events. For instance, a change data capture will tell us whenever something happens to an entity in a database and what exactly happened. So, we'll get those events into a queue like Kafka or Pub/Sub and listen to the queue all the time. Finally, we need to store the events. It could be, for instance, by keeping the whole history plus a view or copy with the latest status of our data. Streaming is also really good for when you don't know when the events will happen or when external entities will send the data to you. The drawback is you need to listen 24/7. Finally, remember that no matter how we get our data, it's always a good idea to first store it in a dedicated zone for new data, also known as a landing zone, so we can explore and process it before our end-users get to know it.
+
+
+
+
+1. Data Processing
+00:00 - 00:04
+Let's review how to get the best from our data by processing it.
+
+2. What is data processing?
+00:04 - 00:43
+What exactly is data processing? Is it transformations? Well, processing is wider. It's the whole idea of working with data. By processing, we mean, for instance, exploring it or performing data quality reviews without necessarily transforming it. Another example of data processing is analytics itself. For example, aggregating the data to gain insights or connecting multiple sources to get a 360 view of our organization or area. Nonetheless, we're already partially describing transformations here, which is still an important part of data processing but not everything.
+
+3. Batch processing
+00:43 - 01:17
+When processing data, we could execute our jobs in two different approaches: Batch and streaming. Batch processing is when we read our whole data universe and work on it. When we say universe, it means we have a clear understanding of where it starts and ends. For instance, a whole table or a subset of a table based on some condition. In batch, we'll work with that fixed data, and we can perform operations over the whole dataset. For instance, we could compute an average of the whole dataset and derive insights from it.
+
+4. Streaming processing
+01:17 - 02:01
+Something completely different happens with streaming. Here, we'll keep getting new data all the time. We don't know when it ends; thus, we could not compute operations over the whole dataset. So, we'll need to define a window in which we could perform such operations. Windows could be defined by a fixed time. For instance, we could compute the average for data that arrives within a 30-minute timeframe, and events after that will be processed in the next window. There are other types of windows, for example, sliding, which could overlap multiple data items. So, it is a good option for computing moving averages. Nonetheless, what happens if an event arrives late but belongs to the previous window?
+
+1 https://beam.apache.org/documentation/programming-guide/#windowing
+5. Streaming processing concepts
+02:01 - 02:32
+That's why we consider two different times. Event time refers to the time when the event happens, while processing time is when the event is processed. However, how will we know a window is closed? Watermarks! They are the notion of when all data in a certain window can be expected to have arrived in the pipeline. If data arrives after that, it is considered late. And late data may trigger a new processing event that could be re-processing the whole window, but that's up to us.
+
+6. Processing technologies
+02:32 - 03:47
+Finally, let's review some tools useful for processing. We have frameworks like Spark or Flink that allow us to do both batch and streaming processing. However, they require a cluster, which is a set of servers that work in a coordinated way to accomplish some tasks. Cloud providers abstract the complexity of clusters with services like EMR or Dataproc that provision the machines and packages we need to run our jobs, but we still need to manage the cluster. Although, Google even abstracts batch and streaming under a single unified model using Apache Beam under Dataflow. Dataflow goes further as it's known as serverless, meaning that the provider will fully manage the servers' life cycle. Overall, these are great alternatives for general big data processing. Our computing will run in commodity servers and scale horizontally, and those frameworks and cloud providers hide that complexity from us. However, not everything is big data. We'll also face individual operations that will not necessarily happen all the time. That's where we'd like to use function computing to process our data without servers running 24/7, but responding to events.
