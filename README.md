@@ -279,14 +279,16 @@ The main enabler of any data governance strategy is the metadata. Let's check it
 
 2. What is metadata?
 
-<img width="858" height="289" alt="Screenshot 2026-02-25 at 10 20 05" src="https://github.com/user-attachments/assets/ce2d49f8-7a42-4fce-80c2-b149af097d5c" />
+<img width="737" height="411" alt="Screenshot 2026-02-25 at 10 34 28" src="https://github.com/user-attachments/assets/75fe8f09-629e-4208-a394-90936c4797ea" />
+
 
 
 So, let's start with the basics - What is metadata? In its simplest form, metadata is 'data about data'. It provides information about our data, which can be used to organize, locate, and understand it more effectively. Imagine walking into a library and picking up a book. How do you know what it's about? You'd look at the title, maybe the author, and then take a look at the blurb on the back. All of this is metadata. It gives us context and helps us to understand what the book, or in our case, the data, is all about. Metadata is an essential part of data architecture because it allows for efficient data management and usage. It makes data discoverable and accessible, enhances its usability, and aids in maintaining data quality.
 
 3. Metadata types
 
-<img width="528" height="348" alt="Screenshot 2026-02-25 at 10 22 15" src="https://github.com/user-attachments/assets/a54949c5-3063-457e-904a-5b5e77c672a5" />
+<img width="855" height="368" alt="Screenshot 2026-02-25 at 10 40 17" src="https://github.com/user-attachments/assets/e7b2d71b-6811-4f4a-9fc8-6e268847b6f4" />
+
 
 
 Now, let's get to know the different 'species' of metadata. First up, we've got technical metadata. This type of metadata relates to the data structure, including database schema, column names, data types, or relationships. Think of it as the blueprint of your data environment. In our book example, it could be, for instance, the number of pages or the ISBN. Next, business metadata provides context about the data, like business definitions and rules, or the owner of the data. An example would be a business glossary that defines the terms used in an organization. Back to our book example, business metadata there could be a summary or the genre, that provides us with context on what the book is about. Then we have operational metadata, which is like a diary of our data processing. It keeps a record of things like timestamps, ETL job status, and data quality metrics. It's like the daily health check-up for our data. Lastly, we have usage metadata. This type keeps track of data usage - who accessed it, when, and how it was used. It's like the security footage for your data, crucial for auditing and data security.
