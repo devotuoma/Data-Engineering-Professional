@@ -177,3 +177,32 @@ That's why we consider two different times. Event time refers to the time when t
 6. Processing technologies
 02:32 - 03:47
 Finally, let's review some tools useful for processing. We have frameworks like Spark or Flink that allow us to do both batch and streaming processing. However, they require a cluster, which is a set of servers that work in a coordinated way to accomplish some tasks. Cloud providers abstract the complexity of clusters with services like EMR or Dataproc that provision the machines and packages we need to run our jobs, but we still need to manage the cluster. Although, Google even abstracts batch and streaming under a single unified model using Apache Beam under Dataflow. Dataflow goes further as it's known as serverless, meaning that the provider will fully manage the servers' life cycle. Overall, these are great alternatives for general big data processing. Our computing will run in commodity servers and scale horizontally, and those frameworks and cloud providers hide that complexity from us. However, not everything is big data. We'll also face individual operations that will not necessarily happen all the time. That's where we'd like to use function computing to process our data without servers running 24/7, but responding to events.
+
+
+
+
+1. Data serving
+00:00 - 00:05
+Now, let's start by understanding what data serving and the serving layer is.
+
+2. Serving layer
+00:05 - 00:31
+The serving layer normally refers to where we're going to store our processed data and the protocols or mechanisms we provide to our consumers to access such data. So, after our data is processed and has gone through data quality checks, enrichment, and other processes, we're ready to present it to our consumers. Thus, we will need to identify how it will be consumed to find a proper way to store and serve it.
+
+3. What data do we have?
+00:31 - 01:15
+To create a good serving layer, we need to understand what data we have and how the business will consume it. For instance, is our data structured? If so, we could decide to use a data warehouse to take advantage of the structure itself and enable use cases like dashboarding, BI, or querying. Thus, a data warehouse as part of the serving layer is a great decision! However, what happens if we have unstructured data? Or if our data is a time series? There are better technologies for such use cases, such as blob storage, a time series database, or even a NoSQL database. It's important to note that a serving layer is not a single data store but a set of them.
+
+4. How will data be consumed?
+01:15 - 02:04
+Now that we know our data, we need to understand how it's going to be consumed. Are we going to build machine learning models? Which applications will consume our data? And will these applications request summarized information? Or maybe request individual records? Not every data storage system is a good option for every query. That's why it's important to address these questions, as, for instance, if applications frequently request individual records, let's say, ask for just one specific user's data, a data warehouse may get exhausted and produce poor performance. Thus, we probably need to consider enabling an RDBMS, even if this means replicating data and exposing it via an API so it can handle such traffic.
+
+5. Serving your data depending on your use case
+02:04 - 02:58
+Let's look at different systems and the use cases that better fit them. Starting with data warehouses. We already know that they are good with structured data and that we can use them for BI, reporting, and querying. Next, we have blob storages, which will allow us to store all types of data. They are also great for archiving data that we do not plan to access frequently, due to their lower cost. The next options, NoSQL and relational databases, are storages that we have already discussed in previous videos, so let's look at their role in the serving layer. For instance, creating a single source of truth that transactional applications will consume by searching for individual records. These applications may connect using an API that will expose the data via a defined protocol, usually HTTP, so applications can get data in a well-defined way.
+
+6. Serving vs. Consuming
+02:58 - 03:30
+Finally, it's important to differentiate between serving and consuming. Even though we're considering how data is consumed to design our serving layer, we do not care how the consumption is actually happening. Thus, the serving layer does not care which exact dashboarding tool or machine learning model we will build. It cares about being able to get the data we need in the best possible way. Additionally, it can also help optimize performance by caching frequently accessed data and using indexing to speed up queries.
+
+
