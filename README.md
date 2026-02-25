@@ -304,3 +304,52 @@ Finally, where do we keep all this metadata? Well, we've got some really good he
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+1. Data Security
+
+
+
+Data security is a vital aspect of protecting sensitive information, ensuring compliance, and building trust. Thus, it is key for every data platform!
+
+
+
+2. Risks and consequences
+
+
+Understanding data security starts with understanding the consequences of its failure, and one of the most important ones is data breaches. A data breach is when confidential or protected data is accessed without authorization, violating its confidentiality. Such breaches can impact many different aspects of a company, from finance due to fraud or penalties for non-compliance laws, to reputational damage, including reduced trust and customer loss.
+
+
+
+3. Data protection measures
+
+
+
+Fortunately, we have various tools to protect us from such risks. For instance, Access Control. Think of it as the door to your house, where you decide who can enter. This practice defines who can access what data, adding a layer of security that's critical in a data platform. Then, we have encryption. This process converts our data into complex meaningless text, only readable with a specific cryptographic key. Encryption is like sending a secret letter only the recipient can read. We need to consider encrypting our data at rest, that is, when the data is living in any storage medium, and in transit, when it's being transferred from one location to another, such as over the Internet. Although, encrypting data in both states is a great security measure, we need to be mindful that it can be costly, impacting performance and billing. Finally, we have data masking. With it, we can use the data without revealing the sensitive parts. The actual data is there, but it's obscured, ensuring it can't be exploited if it falls into the wrong hands. Actually, encrypting some columns of a table could be considered masking as well.
+
+
+
+
+4. Strengthening security in the cloud
+
+
+Additionally, in the cloud, there are a lot of specialized tools that make data security even stronger. IAM, or Identity and Access Management, is probably the main one. This type of service allows us to define permissions at a granular level or even use roles to group a set of related permissions. Normally, IAM is offered by cloud providers as a free service, thus being a really good idea for initial steps into data security. Then, we have Key Management Systems or KMS. These systems are a safe place to keep our cryptographic keys used for encryption. They handle tasks like key creation, rotation, and deletion, providing a secure way to encrypt and decrypt data without the burden of managing our keys. Nonetheless, cloud providers also allow us to provide our keys in case we need them. This is known as CMK, which is the "customer-managed key".
+
+
+
+5. Strengthening security in the cloud: The network
+
+
+Another way to protect our data is by preventing users from being able to connect to it, for example, via networking. Tools like firewalls or private networks may be used here. In the cloud, we have VPCs, or virtual private clouds, that allow us to create a virtual network and configure it with the appropriate isolation we may require to protect our data. Lastly, there are even more controls that we could apply at the border of our network. For instance, limit access to specific managed devices, or IPs, or even control via the network perimeter serverless services. Google offers such service via VPC service controls, and it's especially useful for services like BigQuery, which is accessible from a public endpoint. Even though a network is a great approach to control access, it will normally be easier and cheaper to leverage tools like IAM as a first step to protect us.
+
+
+
