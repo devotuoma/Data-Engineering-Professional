@@ -206,3 +206,45 @@ Let's look at different systems and the use cases that better fit them. Starting
 Finally, it's important to differentiate between serving and consuming. Even though we're considering how data is consumed to design our serving layer, we do not care how the consumption is actually happening. Thus, the serving layer does not care which exact dashboarding tool or machine learning model we will build. It cares about being able to get the data we need in the best possible way. Additionally, it can also help optimize performance by caching frequently accessed data and using indexing to speed up queries.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Data governance
+00:00 - 00:06
+Data governance is present across our whole architecture. Let's dive into it!
+
+2. What is data governance?
+00:06 - 00:31
+Data governance is a complex concept combining people, processes, and tools to appropriately control our data assets. Data governance helps companies understand what data they possess, where it originated, and its quality. At the same time, a well-defined data governance strategy allows them to secure their data, prevent unauthorized access, and meet industry regulations.
+
+1 https://www.oreilly.com/library/view/data-governance-the/9781492063483/
+3. The people
+00:31 - 01:16
+Let's start with the people and the different roles that exist here in data governance. We have three main categories, the first being governors or approvers. They are accountable for the data. Here we find roles like owner or steward that are the actual implementers of the data governance strategy. These roles have first-hand knowledge of the data assets, and they are also responsible for processes like classification and access control. Next, the users are the ones who consume the data. For instance, data analysts or data scientists. Finally, there are other actors like the legal team that helps to understand and adhere to industry regulations or C-executives that fund and lead the overall strategy.
+
+4. The processes
+01:16 - 02:16
+There's a wide variety of processes that companies need to implement to be able to properly govern their data. Our aim is to know our data, its quality, and when and where it originated, along with limiting access. One step is to classify our data, which allows us to understand what type of data we have. Is it sensitive? What exactly does that data represent? Additionally, processes like data lineage that aim to understand the origin of our data need to be implemented. And data quality as well. We need to define what we consider good data, how often we are going to validate that our data is good, or what we are going to do with bad data. Those are the kind of things that encompass the processes in a data governance strategy. And actually, these are the processes that governors normally are responsible for. That's why data governance needs the processes plus the people responsible for them and the data.
+
+5. The tools
+02:16 - 03:49
+Now, we have the tools or technology that will facilitate the implementation of the processes described before. Probably the main tool around data governance is the enterprise dictionary. This dictionary will allow us to categorize our data into different information types. For instance, if a certain field is a phone number, or maybe a name or a salary. With such valuable information, we could start relying on data classes as well. For example, a class called PII or personally identifiable information will allow us to enforce policies on all fields marked as PII. Note that fields may be considered PII or not depending on regulations and company policies, but there are pretty common ones like names, passport numbers, or phones that are considered PII in most popular regulations. We could, for example, restrict access to PII data or only allow it under specific conditions. However, overall, this sounds like more processes. We need to consider how to automate these processes of classification and access management, and current cloud providers offer really good solutions like Data catalog from GCP or Glue data catalog from AWS. At the same time, we have IAM offerings to restrict and manage access to our data, and it normally integrates deeply with catalogs allowing us to ensure access in a granular manner. Finally, it's important to note that processes like data quality, lineage, or encryption are also candidates for automation, and we should pursue this.
+
+6. Let's practice!
+
+
+
