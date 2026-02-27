@@ -637,3 +637,28 @@ In Chapter 3, you learned of the components that allow a data architecture to be
 5. Chapter 4 - Putting it All Together
 00:56 - 01:07
 Finally, in Chapter 4, you learned about cost optimization and orchestration, and most importantly you applied all your new knowledge to solve a business case!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TOPIC 2 : INTRODUCTION TO SHELL
+
+Areas to cover:
+i. Manipulating files and directories
+ii. Manipulating data
+ii. Combining tools
+iv. Batch processing
+v. Creating new tools
+
