@@ -653,12 +653,51 @@ Finally, in Chapter 4, you learned about cost optimization and orchestration, an
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TOPIC 2 : INTRODUCTION TO SHELL
 
 Areas to cover:
+
 i. Manipulating files and directories
+
+
 ii. Manipulating data
+
+
 ii. Combining tools
+
+
 iv. Batch processing
+
+
 v. Creating new tools
 
