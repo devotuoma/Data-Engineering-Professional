@@ -733,9 +733,100 @@ v. Creating new tools
 
 
 
+
+
+
+
+
+
+
+
+
 How can I move a file?
+
 While cp copies a file, mv moves it from one directory to another, just as if you had dragged it in a graphical file browser. It handles its parameters the same way as cp, so the command:
 
 mv autumn.csv winter.csv ..
 moves the files autumn.csv and winter.csv from the current working directory up one level to its parent directory (because .. always refers to the directory above your current location).
+
+
+
+
+
+
+
+
+How can I rename files?
+mv can also be used to rename files. If you run:
+
+mv course.txt old-course.txt
+then the file course.txt in the current working directory is "moved" to the file old-course.txt. This is different from the way file browsers work, but is often handy.
+
+One warning: just like cp, mv will overwrite existing files. If, for example, you already have a file called old-course.txt, then the command shown above will replace it with whatever is in course.txt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How can I delete files?
+We can copy files and move them around; to delete them, we use rm, which stands for "remove". As with cp and mv, you can give rm the names of as many files as you'd like, so:
+
+rm thesis.txt backup/thesis-2017-08.txt
+removes both thesis.txt and backup/thesis-2017-08.txt
+
+rm does exactly what its name says, and it does it right away: unlike graphical file browsers, the shell doesn't have a trash can, so when you type the command above, your thesis is gone for good.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+How can I create and delete directories?
+mv treats directories the same way it treats files: if you are in your home directory and run mv seasonal by-season, for example, mv changes the name of the seasonal directory to by-season. However, rm works differently.
+
+If you try to rm a directory, the shell prints an error message telling you it can't do that, primarily to stop you from accidentally deleting an entire directory full of work. Instead, you can use a separate command called rmdir. For added safety, it only works when the directory is empty, so you must delete the files in a directory before you delete the directory. (Experienced users can use the -r option to rm to get the same effect; we will discuss command options in the next chapter.)
 
