@@ -683,7 +683,21 @@ Finally, in Chapter 4, you learned about cost optimization and orchestration, an
 
 
 
-TOPIC 2 : INTRODUCTION TO SHELL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**TOPIC 2 : INTRODUCTION TO SHELL**
 
 Areas to cover:
 
